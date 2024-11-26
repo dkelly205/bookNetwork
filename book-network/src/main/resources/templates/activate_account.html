@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Your Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+        .email-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .email-body {
+            font-size: 16px;
+            color: #555;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .email-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="email-header">
+        Activate Your Account
+    </div>
+    <div class="email-body">
+        <p th:text="'Hi' + ${username} + ','"></p>
+        <p>Thank you for registering with us! Please use the following code to activate your account:</p>
+        <p th:text="${activationCode}"></p>
+        <a th:href="${confirmationUrl}" class="email-button">Activate Account</a>
+    </div>
+
+</div>
+</body>
+</html>
